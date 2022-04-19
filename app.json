@@ -13,16 +13,29 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cribo.app",
+      "config": {
+        "googleMapsApiKey": "AIzaSyA-9zW_LdiC1zi7KuUmSjR0r5wGq_6r71A"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.cribo.app",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyA-9zW_LdiC1zi7KuUmSjR0r5wGq_6r71A"
+        },
+        "permissions": [
+          "ACCESS_COARSE_LOCATION",
+          "ACCESS_FINE_LOCATION",
+          "FOREGROUND_SERVICE"
+        ]
       }
     },
     "web": {
