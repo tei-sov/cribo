@@ -12,7 +12,7 @@ const luggage = () => {
   return (
     <View style={styles.container}>
       <View style={styles.bx1}>
-        <Text style={{ fontSize: 15, fontWeight: "bold" }}>CRIBO SERVICES</Text>
+        <Text style={{ fontSize: 15, fontWeight: "bold" }}>CRIBO.SERVICES</Text>
       </View>
       <View style={styles.bx2}>
         <Text style={{ fontSize: 15 }}>What can we help with ?</Text>
