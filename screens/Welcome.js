@@ -1,115 +1,55 @@
-import { StyleSheet, Text, View, ScrollView, Image } from "react-native";
-import React, { Component } from "react";
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from "react-native";
+import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { TextInput, TouchableOpacity } from "react-native-gesture-handler";
-import luggage from "./Luggage";
+import CountryFlag from "react-native-country-flag";
 
-const welcome = () => {
+const Welcome = () => {
   const { navigate } = useNavigation();
   return (
     <View style={styles.container}>
-      <View style={styles.bx1}>
-        <View style={{ flex: 1 }}>
-          <Image
-            style={{
-              height: "100%",
-              width: "100%",
-              resizeMode: "cover",
-            }}
-            source={require("../assets/bsk.jpg")}
-          />
-        </View>
-      </View>
-
-      <View style={styles.txx}>
-        <Text
-          style={{
-            alignSelf: "center",
-            marginTop: 25,
-            fontSize: 15,
-            fontWeight: "bold",
-          }}
-        >
-          Truck & Muscle, Anytime You Need It
+      <View style={styles.Logo}>
+        <Text style={{ fontSize: 50, color: "white", fontWeight: "700" }}>
+          Cribo
         </Text>
-        <Text
-          style={{
-            alignSelf: "center",
-            marginTop: 25,
-            fontSize: 15,
-            fontWeight: "bold",
-          }}
-        >
-          Load,Haul and Deliver just about anything.
-        </Text>
-        {/* <View style={styles.tx2}>
-          <Text
-            style={{ fontSize: 35, fontWeight: "bold", alignSelf: "center" }}
-          >
-            CRIBO
-          </Text>
-        </View> */}
       </View>
-
-      <View style={styles.bx2}>
-        <View>
-          <TouchableOpacity
-            onPress={() => navigate("Luggage")}
-            style={{
-              backgroundColor: "#d2691e",
-              justifyContent: "center",
-              alignSelf: "center",
-              borderRadius: 5,
-              margin: 10,
-              width: "50%",
-              padding: 10,
-            }}
-          >
-            <Text
-              style={{
-                alignSelf: "center",
-                fontWeight: "bold",
-                color: "white",
-              }}
-            >
-              START NOW
-            </Text>
-          </TouchableOpacity>
+      <View style={styles.Texts}>
+        <Text style={{ marginVertical: 20, fontSize: 20 }}>
+          Connect With Us
+        </Text>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+        <CountryFlag isoCode="gh" size={25} />
+        <TextInput style={styles.TextInput} placeholder="Phone"/>
         </View>
+        <TouchableOpacity onPress={()=>navigate('Luggage')} style={{marginTop: 50}}>
+          <Text>Already Have an Account?</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export default welcome;
+export default Welcome;
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     flex: 1,
   },
-
-  bx1: {
-    // backgroundColor: "blue",
-    flex: 0.7,
+  Logo: {
+    flex: 1,
+    backgroundColor: "red",
+    borderBottomRightRadius: 90,
+    alignItems: "center",
     justifyContent: "center",
-    // margin: 50,
   },
-
-  txx: {
-    // backgroundColor: "yellow",
-    flex: 0.2,
+  Texts: {
+    flex: 0.4,
+    backgroundColor: "white",
+    marginHorizontal: 20,
   },
-
-  tx2: {
-    backgroundColor: "green",
-    flex: 0.5,
-  },
-
-  bx2: {
-    // backgroundColor: "orange",
-    flex: 0.2,
-    justifyContent: "center",
-    // margin: 50,
-  },
+  TextInput: {
+    width: 200,
+    borderBottomWidth: 1,
+    marginHorizontal: 10,
+  }
 });
