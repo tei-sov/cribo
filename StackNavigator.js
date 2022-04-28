@@ -4,8 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Welcome from "./screens/Welcome";
 import Confirmation from "./screens/Confirmation";
-import luggage from "./screens/Luggage";
-import destination from "./screens/Destination";
+import Luggage from "./screens/Luggage";
+import Destination from "./screens/Destination";
 
 const Stack = createStackNavigator();
 
@@ -21,12 +21,12 @@ const StackNavigator = () => {
           />
           <Stack.Screen
             name="Luggage"
-            component={luggage}
+            component={Luggage}
             options={{ headerShown: false }}
           />
           <Stack.Screen
             name="Destination"
-            component={destination}
+            component={Destination}
             options={{ headerShown: false }}
           />
         </Stack.Group>
